@@ -237,24 +237,24 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
     // let moodHead = document.createElement("h2").text = "Mood";
     // let descHead = document.createElement("h2").text = "Horoscope";
 
-    compatText = document.getElementById("compatText");
+    compatText = document.getElementById("compat-text");
 
     //if compatBody doesn't exist, none of them do, so create them
     if(compatText == null){
         signText = document.createElement("h3");
-        signText.id = "signText";
+        signText.id = "sign-text";
         compatText = document.createElement("h3");
-        compatText.id = "compatText";
+        compatText.id = "compat-text";
         timeText = document.createElement("h3");
-        timeText.id = "timeText";
+        timeText.id = "time-text";
         numberText = document.createElement("h3");
-        numberText.id = "numberText";
+        numberText.id = "number-text";
         colorText = document.createElement("h3");
-        colorText.id = "colorText";
+        colorText.id = "color-text";
         moodText = document.createElement("h3");
-        moodText.id = "moodText";
+        moodText.id = "mood-text";
         descText = document.createElement("h3");
-        descText.id = "descText";
+        descText.id = "desc-text";
     } 
 
     //set text contents
