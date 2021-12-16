@@ -20,6 +20,8 @@ let isLeapYear = false;
 
 initializeBirthdateSelect();
 
+button.onclick = sendAPIRequest;
+
 // ------ FUNCTIONS ------ \\
 monthList.oninput = function () {
     //the +1 in each .remove is because the select menus contain a title option at the beginning
@@ -82,6 +84,7 @@ monthList.oninput = function () {
     }
 };
 
+
 //just flag whether leap year or not
 yearList.oninput = function () {
     if((yearList.value % 4 == 0 && yearList.value % 100 != 0) || (yearList.value % 4 == 0 && yearList.value % 400 == 0))
@@ -107,6 +110,7 @@ yearList.oninput = function () {
         }
     }
 }
+
 
 //adds months, days, and years to respective lists
 function initializeBirthdateSelect(){
@@ -144,4 +148,62 @@ function initializeBirthdateSelect(){
         option.text = years[i];
         yearList.appendChild(option);
     }
+}
+
+//determines astrological sign based on birthdate
+function getSign(month, day){
+    let sign;
+
+    //now figure out the sign...this is the cleanest, simplest way i can think of
+    if((month == "January" && day >= 20) || (month == "February" && day <= 18))
+        sign = "aquarius";
+    if((month == "February" && day >= 19) || (month == "March" && day <= 20))
+        sign = "pisces";
+    if((month == "March" && day >= 21) || (month == "April" && day <= 19))
+        sign = "aries";
+    if((month == "April" && day >= 20) || (month == "May" && day <= 20))
+        sign = "taurus";
+    if((month == "May" && day >= 21) || (month == "June" && day <= 20))
+        sign = "gemini";
+    if((month == "June" && day >= 21) || (month == "July" && day <= 22))
+        sign = "cancer";
+    if((month == "July" && day >= 23) || (month == "August" && day <= 22))
+        sign = "leo";
+    if((month == "August" && day >= 23) || (month == "September" && day <= 22))
+        sign = "virgo";
+    if((month == "September" && day >= 23) || (month == "October" && day <= 22))
+        sign = "libra";
+    if((month == "October" && day >= 23) || (month == "November" && day <= 21))
+        sign = "scorpio";
+    if((month == "November" && day >= 22) || (month == "December" && day <= 21))
+        sign = "sagittarius"
+    if((month == "December" && day >= 22) || (month == "January" && day <= 19))
+        sign = "capricorn";
+    
+    return sign;
+}
+
+
+function sendAPIRequest(){
+
+    //get the astrological sign given the birthdate
+    let sign = getSign(monthList.value, dayList.value);
+
+    if (sign == null){
+        console.log("Sign is null\n");
+        return;
+    }
+
+    else{
+        //send request to get horoscope
+        const url = `https://aztro.sameerkumar.website/?sign=${sign}&day=today`;
+        fetch(url, {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(json => {
+            const date = json.current_date;
+            console.log(date);
+        })
+    } 
 }
