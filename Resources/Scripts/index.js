@@ -10,6 +10,8 @@ const months = ["January", "February", "March", "April", "May", "June", "July"
 const days = new Array(31);
 const years = new Array(100);
 
+let isLeapYear = false;
+
 initializeBirthdateSelect();
 
 monthList.onchange = function () {
@@ -68,6 +70,32 @@ monthList.onchange = function () {
         }
     }
 };
+
+//just flag whether leap year or not
+yearList.onchange = function () {
+    if((yearList.value % 4 == 0 && yearList.value % 100 != 0) || (yearList.value % 4 == 0 && yearList.value % 400 == 0))
+        isLeapYear = true;
+    else
+        isLeapYear = false;
+
+    if(monthList.value == "February"){
+        let d29 = days.indexOf(29);
+        //if leapyear and there is no 29th day in Feb, add it
+        if(isLeapYear && d29 == -1){
+            days.push(29);
+            let option = document.createElement("option");
+            option.value = 29;
+            option.text = 29;
+            dayList.appendChild(option);  
+        }
+
+        //if not a leap year but there is a 29th day in Feb, remove it
+        else if(!isLeapYear && d29 != -1){
+            dayList.remove(d29+1);
+            days.splice(d29, 1);
+        }
+    }
+}
 
 function initializeBirthdateSelect(){
     
