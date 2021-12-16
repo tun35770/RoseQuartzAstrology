@@ -30,7 +30,18 @@
     text-align: center;
 }
 
+.birthdate-select {
+    padding: 0.5em 1em;
+    margin: 1em 0.5em;
+}
 
+select {
+    background-color: rgb(109, 70, 130);
+    border: 1px solid;
+    border-color: white;
+    border-radius: 0.25em;
+    color: white;
+}
 
 body {
     background-color: rgb(109, 58, 116);

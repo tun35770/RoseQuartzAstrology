@@ -1,10 +1,14 @@
+
+// ------ VARIABLES ------ \\
 const myParent = document.body;
+const button = document.getElementById("birthdate-button");
 
 //create selects
 const monthList = document.getElementById("month");
 const dayList = document.getElementById("day");
 const yearList = document.getElementById("year");
 
+//DONT TOUCH (well, you can add more years if you want)!!!
 const months = ["January", "February", "March", "April", "May", "June", "July"
                     , "August", "September", "October", "November", "December"];
 const days = new Array(31);
@@ -12,8 +16,11 @@ const years = new Array(100);
 
 let isLeapYear = false;
 
+// ------ PROGRAM ------ \\
+
 initializeBirthdateSelect();
 
+// ------ FUNCTIONS ------ \\
 monthList.oninput = function () {
     //the +1 in each .remove is because the select menus contain a title option at the beginning
     //so total size is 1 more than the array sizes (every element shifted by 1)
@@ -101,23 +108,9 @@ yearList.oninput = function () {
     }
 }
 
+//adds months, days, and years to respective lists
 function initializeBirthdateSelect(){
     
-    //arrays containing option values
-    
-
-    /* let monthTitleOption = document.createElement("option");
-    monthTitleOption.value = "Month";
-    monthTitleOption.text = "Month";
-
-    let dayTitleOption = document.createElement("option");
-    dayTitleOption.value = "Day";
-    dayTitleOption.text = "Day";
-
-    let yearTitleOption = document.createElement("option");
-    yearTitleOption.value = "Year";
-    yearTitleOption.text = "Year"; */
-
     //initialize days[] with 1-31
     for(let i = 1; i <= 31; i++){
         days[i-1] = i;
