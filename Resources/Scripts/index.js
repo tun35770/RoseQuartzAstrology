@@ -1,7 +1,9 @@
 
 // ------ VARIABLES ------ \\
+//HTML elements
 const myParent = document.body;
 const button = document.getElementById("birthdate-button");
+const horoscopeBody = document.getElementById("horoscope");
 
 //create selects
 const monthList = document.getElementById("month");
@@ -202,8 +204,26 @@ function sendAPIRequest(){
         })
         .then(response => response.json())
         .then(json => {
-            const date = json.current_date;
-            console.log(date);
+            const compatibility = json.compatibility;
+            const lucky_time = json.lucky_time;
+            const lucky_number = json.lucky_number;
+            const color = json.color;
+            const mood = json.mood;
+            const description = json.description;
+
+            displayHoroscope(compatibility, lucky_time, lucky_number, color, mood, description);
         })
     } 
+}
+
+//displays horoscope info in html
+function displayHoroscope(compatibility, lucky_time, lucky_number, color, mood, description){
+    let compatHead = document.createElement("h2").text = "Compatibility";
+    let timeHead = document.createElement("h2").text = "Lucky Time";
+    let numberHead = document.createElement("h2").text = "Lucky Number";
+    let colorHead = document.createElement("h2").text = "Color";
+    let moodHead = document.createElement("h2").text = "Mood";
+    let descHead = document.createElement("h2").text = "Horoscope";
+    
+    
 }
