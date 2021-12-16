@@ -32,7 +32,6 @@
 
 #header-text {
     color: whitesmoke;
-    font-family: 'Amatic SC', cursive;
     font-size: 6em;
     text-align: center;
 }
@@ -44,6 +43,7 @@
 
 body {
     background-color: rgb(211,144,149);
+    font-family: 'Amatic SC', cursive;
 }
 
 select {
@@ -54,6 +54,6 @@ select {
     color: whitesmoke;
 }
 
-h2 {
-    font-family: 'Amatic SC', cursive;
+h3 {
+    font-size: 3em;
 }

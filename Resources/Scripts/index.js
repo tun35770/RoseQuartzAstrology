@@ -5,6 +5,9 @@ const myParent = document.body;
 const button = document.getElementById("birthdate-button");
 const horoscopeBody = document.getElementById("horoscope");
 
+//for horoscope results
+let signBody, compatBody, timeBody, numberBody, colorBody, moodBody, descBody;
+
 //create selects
 const monthList = document.getElementById("month");
 const dayList = document.getElementById("day");
@@ -158,29 +161,29 @@ function getSign(month, day){
 
     //now figure out the sign...this is the cleanest, simplest way i can think of
     if((month == "January" && day >= 20) || (month == "February" && day <= 18))
-        sign = "aquarius";
+        sign = "Aquarius";
     if((month == "February" && day >= 19) || (month == "March" && day <= 20))
-        sign = "pisces";
+        sign = "Pisces";
     if((month == "March" && day >= 21) || (month == "April" && day <= 19))
-        sign = "aries";
+        sign = "Aries";
     if((month == "April" && day >= 20) || (month == "May" && day <= 20))
-        sign = "taurus";
+        sign = "Taurus";
     if((month == "May" && day >= 21) || (month == "June" && day <= 20))
-        sign = "gemini";
+        sign = "Gemini";
     if((month == "June" && day >= 21) || (month == "July" && day <= 22))
-        sign = "cancer";
+        sign = "Cancer";
     if((month == "July" && day >= 23) || (month == "August" && day <= 22))
-        sign = "leo";
+        sign = "Leo";
     if((month == "August" && day >= 23) || (month == "September" && day <= 22))
-        sign = "virgo";
+        sign = "Virgo";
     if((month == "September" && day >= 23) || (month == "October" && day <= 22))
-        sign = "libra";
+        sign = "Libra";
     if((month == "October" && day >= 23) || (month == "November" && day <= 21))
-        sign = "scorpio";
+        sign = "Scorpio";
     if((month == "November" && day >= 22) || (month == "December" && day <= 21))
-        sign = "sagittarius"
+        sign = "Sagittarius"
     if((month == "December" && day >= 22) || (month == "January" && day <= 19))
-        sign = "capricorn";
+        sign = "Capricorn";
     
     return sign;
 }
@@ -211,33 +214,50 @@ function sendAPIRequest(){
             const mood = json.mood;
             const description = json.description;
 
-            displayHoroscope(compatibility, lucky_time, lucky_number, color, mood, description);
+            displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, mood, description);
         })
     } 
 }
 
 //displays horoscope info in html
-function displayHoroscope(compatibility, lucky_time, lucky_number, color, mood, description){
-    let compatHead = document.createElement("h2").text = "Compatibility";
-    let timeHead = document.createElement("h2").text = "Lucky Time";
-    let numberHead = document.createElement("h2").text = "Lucky Number";
-    let colorHead = document.createElement("h2").text = "Color";
-    let moodHead = document.createElement("h2").text = "Mood";
-    let descHead = document.createElement("h2").text = "Horoscope";
-    
-    let compatBody = document.createElement("h4");
-    compatBody.textContent = compatibility;
-    let timeBody = document.createElement("h4");
-    timeBody.textContent = lucky_time;
-    let numberBody = document.createElement("h4");
-    numberBody.textContent = lucky_number;
-    let colorBody = document.createElement("h4");
-    colorBody.textContent = color;
-    let moodBody = document.createElement("h4");
-    moodBody.textContent = mood;
-    let descBody = document.createElement("h4");
-    descBody.textContent = description;
+function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, mood, description){
+    // let compatHead = document.createElement("h2").text = "Compatibility";
+    // let timeHead = document.createElement("h2").text = "Lucky Time";
+    // let numberHead = document.createElement("h2").text = "Lucky Number";
+    // let colorHead = document.createElement("h2").text = "Color";
+    // let moodHead = document.createElement("h2").text = "Mood";
+    // let descHead = document.createElement("h2").text = "Horoscope";
 
+    compatBody = document.getElementById("compatBody");
+
+    //if compatBody doesn't exist, none of them do, so create them
+    if(compatBody == null){
+        signBody = document.createElement("h3");
+        signBody.id = "signBody";
+        compatBody = document.createElement("h3");
+        compatBody.id = "compatBody";
+        timeBody = document.createElement("h3");
+        timeBody.id = "timeBody";
+        numberBody = document.createElement("h3");
+        numberBody.id = "numberBody";
+        colorBody = document.createElement("h3");
+        colorBody.id = "colorBody";
+        moodBody = document.createElement("h3");
+        moodBody.id = "moodBody";
+        descBody = document.createElement("h3");
+        descBody.id = "descBody";
+    } 
+
+    //set text contents
+    signBody.textContent = `Your sign is: ${sign}`;
+    compatBody.textContent = `You are compatible with: ${compatibility}`;
+    timeBody.textContent = `Your lucky time today is: ${lucky_time}`;
+    numberBody.textContent = `Your lucky number today is: ${lucky_number}`;
+    colorBody.textContent = `Your color is: ${color}`;
+    moodBody.textContent = `Your mood for today is: ${mood}`;
+    descBody.textContent = `Your horoscope for today: ${description}`;
+
+    horoscopeBody.appendChild(signBody);
     horoscopeBody.appendChild(compatBody);
     horoscopeBody.appendChild(timeBody);
     horoscopeBody.appendChild(numberBody);
