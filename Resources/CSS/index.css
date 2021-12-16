@@ -8,6 +8,12 @@
 }
 
 #header-text {
+    color:#fff;
+    font-family: 'Amatic SC', cursive;
+    font-size: 6em;
     text-align: center;
-    color:#000;
+}
+
+body {
+    background-color: rgb(109, 58, 116);
 }
