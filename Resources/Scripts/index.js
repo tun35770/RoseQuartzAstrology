@@ -238,29 +238,42 @@ function sendAPIRequest(){
 
 //displays horoscope info in html
 function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, mood, description){
-    signHead = document.getElementById("h2");
+    signHead = document.getElementById("sign-head");
 
     if(signHead == null){
         signHead = document.createElement("h2");
         signHead.id = "sign-head";
+        signHead.className = "horoscope-heading";
         signHead.textContent = "Your Sign";
+
         compatHead = document.createElement("h2");
         compatHead.id = "compat-head";
+        compatHead.className = "horoscope-heading";
         compatHead.textContent = "Your Compatibility";
+
         timeHead = document.createElement("h2");
         timeHead.id = "time-head";
+        timeHead.className = "horoscope-heading";
         timeHead.textContent = "Your Lucky Time for Today";
+
         numberHead = document.createElement("h2");
         numberHead.id = "number-head";
+        numberHead.className = "horoscope-heading";
         numberHead.textContent = "Your Lucky Number Today";
+
         colorHead = document.createElement("h2");
         colorHead.id = "color-head";
+        colorHead.className = "horoscope-heading";
         colorHead.textContent = "Your Color";
+
         moodHead = document.createElement("h2");
         moodHead.id = "mood-head";
+        moodHead.className = "horoscope-heading";
         moodHead.textContent = "Your Mood";
+
         descHead = document.createElement("h2");
         descHead.id = "desc-head";
+        descHead.className = "horoscope-heading";
         descHead.textContent = "Your Horoscope";
 
         signBody.appendChild(signHead);

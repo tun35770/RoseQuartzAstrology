@@ -44,6 +44,10 @@
     margin: 1em 0.5em;
 }
 
+.horoscope-heading {
+    background-color:rgb(219, 148, 148)
+}
+
 .horoscope-section {
     background-color: rgb(223, 160, 160);
     border-radius: 0.75em;
@@ -63,14 +67,18 @@ footer {
     width: 100%;
 }
 
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
 select {
     background-color: rgb(200,150,170);
     border: 1px solid;
     border-color: whitesmoke;
     border-radius: 0.25em;
     color: whitesmoke;
-}
-
-h3 {
-    font-size: 3em;
 }
