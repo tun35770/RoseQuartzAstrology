@@ -14,6 +14,14 @@ let colorBody = document.getElementById("color");
 let moodBody = document.getElementById("mood");
 let descBody = document.getElementById("description");
 
+let signHead = document.getElementById("sign-head");
+let compatHead = document.getElementById("compat-head");
+let timeHead = document.getElementById("time-head");
+let numberHead = document.getElementById("number-head");
+let colorHead = document.getElementById("color-head");
+let moodHead = document.getElementById("mood-head");
+let descHead = document.getElementById("desc-head");
+
 //text of each section above
 let signText, compatText, timeText, numberText, colorText, moodText, descText;
 
@@ -230,12 +238,39 @@ function sendAPIRequest(){
 
 //displays horoscope info in html
 function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, mood, description){
-    // let compatHead = document.createElement("h2").text = "Compatibility";
-    // let timeHead = document.createElement("h2").text = "Lucky Time";
-    // let numberHead = document.createElement("h2").text = "Lucky Number";
-    // let colorHead = document.createElement("h2").text = "Color";
-    // let moodHead = document.createElement("h2").text = "Mood";
-    // let descHead = document.createElement("h2").text = "Horoscope";
+    signHead = document.getElementById("h2");
+
+    if(signHead == null){
+        signHead = document.createElement("h2");
+        signHead.id = "sign-head";
+        signHead.textContent = "Your Sign";
+        compatHead = document.createElement("h2");
+        compatHead.id = "compat-head";
+        compatHead.textContent = "Your Compatibility";
+        timeHead = document.createElement("h2");
+        timeHead.id = "time-head";
+        timeHead.textContent = "Your Lucky Time for Today";
+        numberHead = document.createElement("h2");
+        numberHead.id = "number-head";
+        numberHead.textContent = "Your Lucky Number Today";
+        colorHead = document.createElement("h2");
+        colorHead.id = "color-head";
+        colorHead.textContent = "Your Color";
+        moodHead = document.createElement("h2");
+        moodHead.id = "mood-head";
+        moodHead.textContent = "Your Mood";
+        descHead = document.createElement("h2");
+        descHead.id = "desc-head";
+        descHead.textContent = "Your Horoscope";
+
+        signBody.appendChild(signHead);
+        compatBody.appendChild(compatHead);
+        timeBody.appendChild(timeHead);
+        numberBody.appendChild(numberHead);
+        colorBody.appendChild(colorHead);
+        moodBody.appendChild(moodHead);
+        descBody.appendChild(descHead);
+    }
 
     compatText = document.getElementById("compat-text");
 
@@ -258,13 +293,13 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
     } 
 
     //set text contents
-    signText.textContent = `Your sign is: ${sign}`;
-    compatText.textContent = `You are compatible with: ${compatibility}`;
-    timeText.textContent = `Your lucky time today is: ${lucky_time}`;
-    numberText.textContent = `Your lucky number today is: ${lucky_number}`;
-    colorText.textContent = `Your color is: ${color}`;
-    moodText.textContent = `Your mood for today is: ${mood}`;
-    descText.textContent = `Your horoscope for today: ${description}`;
+    signText.textContent = sign;
+    compatText.textContent = compatibility;
+    timeText.textContent = lucky_time;
+    numberText.textContent = lucky_number;
+    colorText.textContent = color;
+    moodText.textContent = mood;
+    descText.textContent = description;
 
 
     signBody.appendChild(signText);

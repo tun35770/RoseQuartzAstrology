@@ -35,6 +35,10 @@
     text-align: center;
 }
 
+#horoscope {
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
 .birthdate-select {
     padding: 0.5em 1em;
     margin: 1em 0.5em;
