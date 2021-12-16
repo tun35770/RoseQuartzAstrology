@@ -225,5 +225,24 @@ function displayHoroscope(compatibility, lucky_time, lucky_number, color, mood, 
     let moodHead = document.createElement("h2").text = "Mood";
     let descHead = document.createElement("h2").text = "Horoscope";
     
-    
+    let compatBody = document.createElement("h4");
+    compatBody.textContent = compatibility;
+    let timeBody = document.createElement("h4");
+    timeBody.textContent = lucky_time;
+    let numberBody = document.createElement("h4");
+    numberBody.textContent = lucky_number;
+    let colorBody = document.createElement("h4");
+    colorBody.textContent = color;
+    let moodBody = document.createElement("h4");
+    moodBody.textContent = mood;
+    let descBody = document.createElement("h4");
+    descBody.textContent = description;
+
+    horoscopeBody.appendChild(compatBody);
+    horoscopeBody.appendChild(timeBody);
+    horoscopeBody.appendChild(numberBody);
+    horoscopeBody.appendChild(colorBody);
+    horoscopeBody.appendChild(moodBody);
+    horoscopeBody.appendChild(descBody);
+
 }
