@@ -14,7 +14,7 @@ let isLeapYear = false;
 
 initializeBirthdateSelect();
 
-monthList.onchange = function () {
+monthList.oninput = function () {
     //the +1 in each .remove is because the select menus contain a title option at the beginning
     //so total size is 1 more than the array sizes (every element shifted by 1)
 
@@ -41,7 +41,7 @@ monthList.onchange = function () {
             dayList.remove(d30+1);
             days.splice(d30, 1);
         }
-        if(d29 != -1){
+        if(d29 != -1 && !isLeapYear){
             dayList.remove(d29+1);
             days.splice(d29, 1);
         }
@@ -50,18 +50,22 @@ monthList.onchange = function () {
     //31 days, add them back if needed
     else{
         let daysSize = days.length; //should be 31 for 31 days, otherwise add them back!
-        if(daysSize < 30){  //only 28 days, add back 29 & 30
+        if(daysSize < 29){  //add back 29
             days.push(29);
-            days.push(30);
-            //adding 29 & 30 options back to select
-            for(let i = 29; i < 31; i++){
-                let option = document.createElement("option");
-                option.value = i;
-                option.text = i;
-                dayList.appendChild(option);
-            }
+            let option = document.createElement("option");
+            option.value = 29;
+            option.text = 29;
+            dayList.appendChild(option);
         }
-        if(daysSize < 31){   //either 28 or 30 days before adding, so add 28 29 30
+        if(daysSize < 30){  //add back 30
+            days.push(30);
+            let option = document.createElement("option");
+            option.value = 30;
+            option.text = 30;
+            dayList.appendChild(option);
+            
+        }
+        if(daysSize < 31){   //add back 31
             days.push(31);
             let option = document.createElement("option");
             option.value = 31;
@@ -72,7 +76,7 @@ monthList.onchange = function () {
 };
 
 //just flag whether leap year or not
-yearList.onchange = function () {
+yearList.oninput = function () {
     if((yearList.value % 4 == 0 && yearList.value % 100 != 0) || (yearList.value % 4 == 0 && yearList.value % 400 == 0))
         isLeapYear = true;
     else
