@@ -16,6 +16,11 @@
     padding: 0.5em 2em;
 }
 
+#birthdate-header {
+    margin: 0px;
+    color: black;
+}
+
 #footer-text {
     position: fixed;
     left: 0;
@@ -37,6 +42,10 @@
     margin: 1em 0.5em;
 }
 
+body {
+    background-color: rgb(211,144,149);
+}
+
 select {
     background-color: rgb(200,150,170);
     border: 1px solid;
@@ -45,6 +54,6 @@ select {
     color: whitesmoke;
 }
 
-body {
-    background-color: rgb(211,144,149);
+h2 {
+    font-family: 'Amatic SC', cursive;
 }
