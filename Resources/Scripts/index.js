@@ -3,7 +3,8 @@
 //HTML elements
 const myParent = document.body;
 const button = document.getElementById("birthdate-button");
-const horoscopeBody = document.getElementById("horoscope");
+const primaryHoroscopeBody = document.getElementById("primary-horoscope");
+const secondaryHoroscopeBody = document.getElementById("secondary-horoscope");
 
 //for horoscope results
 let signBody = document.getElementById("sign");
