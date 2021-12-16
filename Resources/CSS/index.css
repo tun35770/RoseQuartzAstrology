@@ -7,11 +7,13 @@
 }
 
 #birthdate-button {
+    background-color: rgb(212, 150, 150);
+    border-radius: 0.75em;
+    color: whitesmoke;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 15px 32px;
-    
+    padding: 0.5em 2em;
 }
 
 #footer-text {
@@ -24,7 +26,7 @@
 }
 
 #header-text {
-    color:#fff;
+    color: whitesmoke;
     font-family: 'Amatic SC', cursive;
     font-size: 6em;
     text-align: center;
@@ -36,13 +38,13 @@
 }
 
 select {
-    background-color: rgb(109, 70, 130);
+    background-color: rgb(200,150,170);
     border: 1px solid;
-    border-color: white;
+    border-color: whitesmoke;
     border-radius: 0.25em;
-    color: white;
+    color: whitesmoke;
 }
 
 body {
-    background-color: rgb(109, 58, 116);
+    background-color: rgb(211,144,149);
 }
