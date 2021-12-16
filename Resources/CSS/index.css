@@ -35,13 +35,35 @@
     text-align: center;
 }
 
-.horoscope {
-    font-family: 'Noto Sans Display', sans-serif;
+#horoscope-section {
+    margin: auto 10%;
+}
+
+#secondary-horoscope {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    font-size: 0.5rem;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+
+#secondary-horoscope #horoscope-heading {
+    font-size: 0.5em;
+}
+
+#secondary-horoscope .horoscope-element{
+    flex-grow: 2;
 }
 
 .birthdate-select {
     padding: 0.5em 1em;
     margin: 1em 0.5em;
+}
+
+.horoscope {
+    font-family: 'Noto Sans Display', sans-serif;
 }
 
 .horoscope-body{
@@ -51,14 +73,14 @@
 
 .horoscope-heading {
     background-color:rgb(219, 148, 148);
-    margin-bottom: 0;
-    
+    margin: 0 auto;
 }
 
-.horoscope-section {
+.horoscope-element {
     background-color: rgb(223, 160, 160);
     border-radius: 0.75em;
     height: fit-content;
+    margin: 3em auto;
     text-align: center;
     vertical-align: auto;
 }
