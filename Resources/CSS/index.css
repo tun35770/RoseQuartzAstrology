@@ -22,7 +22,6 @@
 }
 
 #footer-text {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -44,7 +43,7 @@
 .horoscope-section {
     background-color: rgb(223, 160, 160);
     border-radius: 0.75em;
-    height: 7em;
+    height: fit-content;
     text-align: center;
     vertical-align: auto;
 }
@@ -52,6 +51,12 @@
 body {
     background-color: rgb(211,144,149);
     font-family: 'Amatic SC', cursive;
+}
+
+footer {
+    position: relative;
+    bottom: 0em;
+    width: 100%;
 }
 
 select {
@@ -64,8 +69,4 @@ select {
 
 h3 {
     font-size: 3em;
-}
-
-#sign-text {
-    vertical-align: auto;
 }
