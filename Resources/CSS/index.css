@@ -44,8 +44,13 @@
     margin: 1em 0.5em;
 }
 
+.horoscope-body{
+    margin: 0;
+}
+
 .horoscope-heading {
-    background-color:rgb(219, 148, 148)
+    background-color:rgb(219, 148, 148);
+    margin-bottom: 0;
 }
 
 .horoscope-section {

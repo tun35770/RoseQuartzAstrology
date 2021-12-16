@@ -291,18 +291,31 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
     if(compatText == null){
         signText = document.createElement("h3");
         signText.id = "sign-text";
+        signText.className = "horoscope-body";
+
         compatText = document.createElement("h3");
         compatText.id = "compat-text";
+        compatText.className = "horoscope-body";
+
         timeText = document.createElement("h3");
         timeText.id = "time-text";
+        timeText.className = "horoscope-body";
+
         numberText = document.createElement("h3");
         numberText.id = "number-text";
+        numberText.className = "horoscope-body";
+
         colorText = document.createElement("h3");
         colorText.id = "color-text";
+        colorText.className = "horoscope-body";
+
         moodText = document.createElement("h3");
         moodText.id = "mood-text";
+        moodText.className = "horoscope-body";
+
         descText = document.createElement("h3");
         descText.id = "desc-text";
+        descText.className = "horoscope-body";
     } 
 
     //set text contents
