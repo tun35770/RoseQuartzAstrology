@@ -167,4 +167,8 @@ select {
     #secondary-horoscope {
         font-size: 1em;
     }
+
+    #secondary-horoscope .horoscope-element {
+        margin: 0 auto;
+    }
 }
