@@ -27,6 +27,8 @@ let descHead = document.getElementById("desc-head");
 //text of each section above
 let signText, compatText, timeText, numberText, colorText, moodText, descText;
 
+const signMap = new Map();
+
 //create selects
 const monthList = document.getElementById("month");
 const dayList = document.getElementById("day");
@@ -44,6 +46,7 @@ let isLeapYear = false;
 
 initializeBirthdateSelect();
 initializeHeader();
+initializeSignMap();
 
 //updates time every second
 setInterval(() => {updateTime();}
@@ -323,6 +326,15 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
         descText = document.createElement("h3");
         descText.id = "desc-text";
         descText.className = "horoscope-body";
+        
+        //append
+        signBody.appendChild(signText);
+        compatBody.appendChild(compatText);
+        timeBody.appendChild(timeText);
+        numberBody.appendChild(numberText);
+        colorBody.appendChild(colorText);
+        moodBody.appendChild(moodText);
+        descBody.appendChild(descText);
     } 
 
     //set text contents
@@ -334,14 +346,21 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
     moodText.textContent = mood;
     descText.textContent = description;
 
+    //add sign image
+    let signSection = document.getElementById("sign");
+    let signImage = document.getElementById("sign-image");
 
-    signBody.appendChild(signText);
-    compatBody.appendChild(compatText);
-    timeBody.appendChild(timeText);
-    numberBody.appendChild(numberText);
-    colorBody.appendChild(colorText);
-    moodBody.appendChild(moodText);
-    descBody.appendChild(descText);
+    //create signImage
+    if(signImage == null){
+        signImage = document.createElement("img");
+        signImage.id = "sign-image";
+        signImage.style.width = "30%";
+        signImage.style.height = "auto";
+        signSection.appendChild(signImage);
+    }
+
+    //change image path
+    signImage.src = signMap.get(sign);
 }
 
 function initializeHeader(){
@@ -393,5 +412,21 @@ function updateTime(){
     let time = hours + ":" + minutes + ":" + seconds + ' ' + suffix;
     let time_text = document.getElementById("time_text");
     time_text.textContent = time;
+}
 
+function initializeSignMap(){
+    let URI = './Resources/Signs/';
+    
+    signMap.set('Aquarius', URI+'aries.png')
+    signMap.set('Aries', URI+'aquarius.png')
+    signMap.set('Cancer', URI+'cancer.png')
+    signMap.set('Capricorn', URI+'capricorn.png')
+    signMap.set('Gemini', URI+'gemini.png')
+    signMap.set('Leo', URI+'leo.png')
+    signMap.set('Libra', URI+'libra.png')
+    signMap.set('Pisces', URI+'pisces.png')
+    signMap.set('Sagittarius', URI+'sagittarius.png')
+    signMap.set('Scorpio', URI+'scorpio.png')
+    signMap.set('Taurus', URI+'taurus.png')
+    signMap.set('Virgo', URI+'virgo.png')
 }
