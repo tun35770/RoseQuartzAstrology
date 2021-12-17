@@ -1,5 +1,9 @@
 
 // ------ VARIABLES ------ \\
+
+//URI of folder containing astrological sign images
+const signsURI = "./Resources/Signs/";
+
 //HTML elements
 const myParent = document.body;
 const header = document.getElementById("header");
@@ -27,8 +31,6 @@ let descHead = document.getElementById("desc-head");
 //text of each section above
 let signText, compatText, timeText, numberText, colorText, moodText, descText;
 
-const signMap = new Map();
-
 //create selects
 const monthList = document.getElementById("month");
 const dayList = document.getElementById("day");
@@ -46,7 +48,6 @@ let isLeapYear = false;
 
 initializeBirthdateSelect();
 initializeHeader();
-initializeSignMap();
 
 //updates time every second
 setInterval(() => {updateTime();}
@@ -217,7 +218,6 @@ function getSign(month, day){
 
 
 function sendAPIRequest(){
-
     //get the astrological sign given the birthdate
     let sign = getSign(monthList.value, dayList.value);
 
@@ -360,7 +360,7 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
     }
 
     //change image path
-    signImage.src = signMap.get(sign);
+    signImage.src = signsURI + sign + '.png';
 }
 
 function initializeHeader(){
@@ -412,21 +412,4 @@ function updateTime(){
     let time = hours + ":" + minutes + ":" + seconds + ' ' + suffix;
     let time_text = document.getElementById("time_text");
     time_text.textContent = time;
-}
-
-function initializeSignMap(){
-    let URI = './Resources/Signs/';
-    
-    signMap.set('Aquarius', URI+'aries.png')
-    signMap.set('Aries', URI+'aquarius.png')
-    signMap.set('Cancer', URI+'cancer.png')
-    signMap.set('Capricorn', URI+'capricorn.png')
-    signMap.set('Gemini', URI+'gemini.png')
-    signMap.set('Leo', URI+'leo.png')
-    signMap.set('Libra', URI+'libra.png')
-    signMap.set('Pisces', URI+'pisces.png')
-    signMap.set('Sagittarius', URI+'sagittarius.png')
-    signMap.set('Scorpio', URI+'scorpio.png')
-    signMap.set('Taurus', URI+'taurus.png')
-    signMap.set('Virgo', URI+'virgo.png')
 }
