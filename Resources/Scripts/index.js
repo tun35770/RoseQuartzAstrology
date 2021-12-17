@@ -250,27 +250,27 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
         compatHead = document.createElement("h2");
         compatHead.id = "compat-head";
         compatHead.className = "horoscope-heading";
-        compatHead.textContent = "Your Compatibility";
+        compatHead.textContent = "Compatibility";
 
         timeHead = document.createElement("h2");
         timeHead.id = "time-head";
         timeHead.className = "horoscope-heading";
-        timeHead.textContent = "Your Lucky Time for Today";
+        timeHead.textContent = "Lucky Time";
 
         numberHead = document.createElement("h2");
         numberHead.id = "number-head";
         numberHead.className = "horoscope-heading";
-        numberHead.textContent = "Your Lucky Number Today";
+        numberHead.textContent = "Lucky Number";
 
         colorHead = document.createElement("h2");
         colorHead.id = "color-head";
         colorHead.className = "horoscope-heading";
-        colorHead.textContent = "Your Color";
+        colorHead.textContent = "Color";
 
         moodHead = document.createElement("h2");
         moodHead.id = "mood-head";
         moodHead.className = "horoscope-heading";
-        moodHead.textContent = "Your Mood";
+        moodHead.textContent = "Mood";
 
         descHead = document.createElement("h2");
         descHead.id = "desc-head";

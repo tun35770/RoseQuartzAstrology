@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "SpaceAndAstronomy";
+    src: url("../Fonts/SpaceAndAstronomy.ttf");
+}
+
 #birthdate {
     display: block;
     margin-left: auto;
@@ -49,7 +54,7 @@
 }
 
 
-#secondary-horoscope #horoscope-heading {
+#secondary-horoscope {
     font-size: 0.5em;
 }
 
@@ -73,6 +78,8 @@
 
 .horoscope-heading {
     background-color:rgb(219, 148, 148);
+    font-family: 'SpaceAndAstronomy', serif;
+    font-size: 2em;
     margin: 0 auto;
 }
 
@@ -94,10 +101,6 @@ footer {
     position: relative;
     bottom: 0em;
     width: 100%;
-}
-
-h2 {
-    font-size: 3em;
 }
 
 h3 {
