@@ -2,6 +2,7 @@
 // ------ VARIABLES ------ \\
 //HTML elements
 const myParent = document.body;
+const header = document.getElementById("header");
 const button = document.getElementById("birthdate-button");
 const primaryHoroscopeBody = document.getElementById("primary-horoscope");
 const secondaryHoroscopeBody = document.getElementById("secondary-horoscope");
@@ -42,6 +43,7 @@ let isLeapYear = false;
 // ------ PROGRAM ------ \\
 
 initializeBirthdateSelect();
+initializeHeader();
 
 button.onclick = sendAPIRequest;
 
@@ -336,5 +338,21 @@ function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, 
     colorBody.appendChild(colorText);
     moodBody.appendChild(moodText);
     descBody.appendChild(descText);
+}
 
+function initializeHeader(){
+    let today = new Date();
+
+    let date = months[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear();
+    //let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    let date_text = document.createElement("p");
+    date_text.textContent = date;
+    date_text.style.margin = "0";
+    header.appendChild(date_text);
+
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let time_text = document.createElement("p");
+    time_text.textContent = time;
+    time_text.style.margin = "0";
+    header.appendChild(time_text);
 }

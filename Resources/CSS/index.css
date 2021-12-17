@@ -34,7 +34,21 @@
     text-align: center;
 }
 
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(221, 221, 221);
+    font-family: "SpaceAndAstronomy";
+    font-size: 1.5em;
+    margin: 0 auto;
+}
+
 #header-text {
+    margin: 0 auto;
+}
+
+#title-text {
     color: whitesmoke;
     font-size: 6em;
     text-align: center;
@@ -95,6 +109,9 @@
 body {
     background-color: rgb(211,144,149);
     font-family: 'Amatic SC', cursive;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 footer {
