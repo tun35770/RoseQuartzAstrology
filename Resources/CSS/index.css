@@ -84,12 +84,7 @@
     align-content: center;
     font-size: 0.5rem;
     justify-content: space-evenly;
-    gap: 20px;
-}
-
-
-#secondary-horoscope {
-    font-size: 0.5em;
+    gap: 2em;
 }
 
 #secondary-horoscope .horoscope-element{
@@ -167,5 +162,9 @@ select {
 
     .birthdate-select, button {
         font-size: 1.75em;
+    }
+
+    #secondary-horoscope {
+        font-size: 1em;
     }
 }
