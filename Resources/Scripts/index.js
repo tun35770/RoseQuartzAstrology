@@ -45,6 +45,10 @@ let isLeapYear = false;
 initializeBirthdateSelect();
 initializeHeader();
 
+//updates time every second
+setInterval(() => {updateTime();}
+, 1000);
+
 button.onclick = sendAPIRequest;
 
 // ------ FUNCTIONS ------ \\
@@ -350,9 +354,40 @@ function initializeHeader(){
     date_text.style.margin = "0";
     header.appendChild(date_text);
 
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    //create time text element
     let time_text = document.createElement("p");
-    time_text.textContent = time;
+    time_text.id = "time_text";
     time_text.style.margin = "0";
     header.appendChild(time_text);
+
+    //sets initial time
+    updateTime();
+}
+
+//updates time
+function updateTime(){
+    let today = new Date();
+    let suffix;
+
+    let hours = today.getHours();
+    let minutes = today.getMinutes();
+    let seconds = today.getSeconds();
+
+    //from 24 hour to 12 hour
+    if(hours < 12)
+        suffix = "a.m.";
+    else  suffix = "p.m.";
+
+    hours %= 12;
+    if(hours == 0)
+        hours == 12;
+
+    hours = hours < 10 ? `0${hours}` : hours;
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    let time = hours + ":" + minutes + ":" + seconds + ' ' + suffix;
+    let time_text = document.getElementById("time_text");
+    time_text.textContent = time;
+
 }
