@@ -350,14 +350,18 @@ function initializeHeader(){
     let date = months[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear();
     //let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     let date_text = document.createElement("p");
+    date_text.className = "header-text";
     date_text.textContent = date;
     date_text.style.margin = "0";
+    date_text.style.color = "whitesmoke";
     header.appendChild(date_text);
 
     //create time text element
     let time_text = document.createElement("p");
     time_text.id = "time_text";
+    time_text.className = "header-text";
     time_text.style.margin = "0";
+    time_text.style.color = "whitesmoke";
     header.appendChild(time_text);
 
     //sets initial time
