@@ -8,7 +8,7 @@
     margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: fit-content;
     text-align: center;
 }
 
@@ -23,7 +23,7 @@
 }
 
 #birthdate-header {
-    margin: 0px;
+    margin: 0;
     color: black;
 }
 
@@ -151,4 +151,21 @@ select {
     border-color: whitesmoke;
     border-radius: 0.25em;
     color: whitesmoke;
+}
+
+@media (orientation: portrait) {
+    #birthdate{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        height: 15em;
+    }
+
+    #birthdate-header {
+        font-size: 4em;
+    }
+
+    .birthdate-select, button {
+        font-size: 1.75em;
+    }
 }
