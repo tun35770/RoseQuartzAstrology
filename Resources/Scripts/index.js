@@ -113,7 +113,6 @@ function sendHoroscopeRequest(){
 
 //displays horoscope info in html
 function displayHoroscope(sign, compatibility, lucky_time, lucky_number, color, mood, description){
-    signHead = document.getElementById("sign-head");
 
     if(signHead == null){
         signHead = document.createElement("h2");

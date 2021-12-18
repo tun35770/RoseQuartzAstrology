@@ -1,6 +1,11 @@
 
 // ------ VARIABLES ------ \\
+const phasesURI = './Resources/MoonPhases/';
+
 const button = document.getElementById("date-button");
+
+let moonImgContainer = document.getElementById("moon-img-container");
+let moonTextContainer = document.getElementById("moon-text-container");
 
 //create selects
 const monthList = document.getElementById("month");
@@ -21,14 +26,16 @@ button.onclick = sendMoonRequest;
 // ------ FUNCTIONS ------ \\
 function getUnixTime(month, day, year){
     let date = Date.UTC(year, month, day);    //milliseconds since 1/1/1970
+    let d = new Date(date);
     console.log(date);
+    console.log(d);
     return date;
 }
 
 function sendMoonRequest(){
     let unix_time;
 
-    if(selectedMonth == null && selectedYear == null && selectedDay == null){
+    if(selectedMonth == null || selectedYear == null || selectedDay == null){
         console.error("Invalid date");
         return;
     }
@@ -44,7 +51,34 @@ function sendMoonRequest(){
         })
         .then(response => response.json())
         .then(json => {
-            console.log(json);
+            console.log(json[0].Phase);
+            let date = new Date(parseInt(json[0].TargetDate));
+            console.log("Target Date: " + date);
+            displayMoonInfo(json[0].Phase);
         }) 
     }
+}
+
+function displayMoonInfo(phase){
+    let moonText = document.getElementById("moon-text");
+
+    if(moonText == null){
+        moonText = document.createElement("h2");
+        moonText.id = "moon-text";
+        moonTextContainer.appendChild(moonText);
+    }
+
+    moonText.textContent = phase;
+
+    let moonImage = document.getElementById("moon-image");
+
+    if(moonImage == null){
+        moonImage = document.createElement("img");
+        moonImage.id = "moon-image";
+        moonImage.style.width = "30%";
+        moonImage.style.height = "auto";
+        moonImgContainer.appendChild(moonImage);
+    }
+
+    moonImage.src = phasesURI + phase + '.png';
 }
