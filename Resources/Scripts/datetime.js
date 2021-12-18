@@ -11,11 +11,6 @@ const years = new Array(100);
 
 var isLeapYear = false;
 
-//create selects
-const monthList = document.getElementById("month");
-const dayList = document.getElementById("day");
-const yearList = document.getElementById("year");
-
 // ------ PROGRAM ------ \\
 initializeHeader();
 

@@ -30,6 +30,11 @@ let descHead = document.getElementById("desc-head");
 //text of each section above
 let signText, compatText, timeText, numberText, colorText, moodText, descText;
 
+//create selects
+const monthList = document.getElementById("month");
+const dayList = document.getElementById("day");
+const yearList = document.getElementById("year");
+
 // ------ PROGRAM ------ \\
 
 initializeDateSelect();
