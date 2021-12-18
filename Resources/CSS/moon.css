@@ -1,0 +1,106 @@
+@font-face {
+    font-family: "SpaceAndAstronomy";
+    src: url("../Fonts/SpaceAndAstronomy.ttf");
+}
+
+#date-container {
+    display: block;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    text-align: center;
+}
+
+#date-button {
+    background-color: rgb(212, 150, 150);
+    border-radius: 0.75em;
+    color: whitesmoke;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5em 2em;
+}
+
+#date-header {
+    margin: 0;
+    color: black;
+}
+
+#footer-text {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(223, 160, 160);
+    font-family: "SpaceAndAstronomy";
+    font-size: 1.5em;
+    margin: 0 auto;
+    opacity: 0.7;
+}
+
+#image-1 {
+    margin: auto;
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+}
+
+#image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    
+    
+    margin: 0 auto;
+    z-index: -1;
+}
+
+#title-text {
+    color: whitesmoke;
+    font-size: 6em;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.date-select {
+    padding: 0.5em 1em;
+    margin: 1em 0.5em;
+}
+
+body {
+    background-color: rgb(211,144,149);
+    font-family: 'Amatic SC', cursive;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+footer {
+    position: relative;
+    bottom: 0em;
+    width: 100%;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+select {
+    background-color: rgb(223, 160, 160);
+    border: 1px solid;
+    border-color: whitesmoke;
+    border-radius: 0.25em;
+    color: whitesmoke;
+}
