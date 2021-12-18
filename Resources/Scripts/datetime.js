@@ -197,7 +197,7 @@ function monthSelectOnInput(){
         }
     }
 
-    selectedMonth = monthLit.value;
+    selectedMonth = monthList.value;
 }
 
 function daySelectOnInput(){

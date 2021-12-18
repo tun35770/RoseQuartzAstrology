@@ -40,7 +40,7 @@ const yearList = document.getElementById("year");
 
 initializeDateSelect();
 
-button.onclick = sendAPIRequest;
+button.onclick = sendHoroscopeRequest;
 
 monthList.oninput = monthSelectOnInput;
 dayList.oninput = daySelectOnInput;
@@ -82,9 +82,9 @@ function getSign(month, day){
 }
 
 
-function sendAPIRequest(){
+function sendHoroscopeRequest(){
     //get the astrological sign given the birthdate
-    let sign = getSign(monthList.value, dayList.value);
+    let sign = getSign(selectedMonth, selectedDay);
 
     if (sign == null){
         console.log("Sign is null\n");
