@@ -9,6 +9,8 @@ var months = ["January", "February", "March", "April", "May", "June", "July"
 const days = new Array(31);
 const years = new Array(100);
 
+var selectedMonth, selectedDay, selectedYear;
+
 var isLeapYear = false;
 
 // ------ PROGRAM ------ \\
@@ -131,6 +133,8 @@ function yearSelectOnInput(){
             days.splice(d29, 1);
         }
     }
+
+    selectedYear = yearList.value;
 }
 
 function monthSelectOnInput(){
@@ -192,4 +196,10 @@ function monthSelectOnInput(){
             dayList.appendChild(option);
         }
     }
+
+    selectedMonth = monthLit.value;
+}
+
+function daySelectOnInput(){
+    selectedDay = dayList.value;
 }

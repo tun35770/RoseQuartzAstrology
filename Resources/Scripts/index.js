@@ -35,16 +35,18 @@ const monthList = document.getElementById("month");
 const dayList = document.getElementById("day");
 const yearList = document.getElementById("year");
 
+
 // ------ PROGRAM ------ \\
 
 initializeDateSelect();
 
 button.onclick = sendAPIRequest;
 
-// ------ FUNCTIONS ------ \\
 monthList.oninput = monthSelectOnInput;
+dayList.oninput = daySelectOnInput;
 yearList.oninput = yearSelectOnInput;
 
+// ------ FUNCTIONS ------ \\
 
 //determines astrological sign based on birthdate
 function getSign(month, day){

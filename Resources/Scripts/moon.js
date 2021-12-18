@@ -12,7 +12,7 @@ const yearList = document.getElementById("year");
 initializeDateSelect();
 
 monthList.oninput = monthSelectOnInput;
+dayList.oninput = daySelectOnInput;
 yearList.oninput = yearSelectOnInput;
-
 
 // ------ FUNCTIONS ------ \\

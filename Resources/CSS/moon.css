@@ -104,3 +104,21 @@ select {
     border-radius: 0.25em;
     color: whitesmoke;
 }
+
+@media (orientation: portrait) {
+    #date-container{
+        width: 100%;
+        height: auto;
+        margin: 0;
+        height: 15em;
+    }
+
+    #date-header {
+        font-size: 4em;
+    }
+
+    .date-select, button {
+        font-size: 1.75em;
+    }
+
+}
