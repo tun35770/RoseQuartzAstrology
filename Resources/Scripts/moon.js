@@ -64,7 +64,7 @@ function displayMoonInfo(phase){
     if(moonText == null){
         moonText = document.createElement("h2");
         moonText.id = "moon-text";
-        moonText.style.fontSize = '3em';
+        moonText.style.fontSize = '2em';
         moonText.style.margin = '0 auto';
         moonTextContainer.appendChild(moonText);
     }
