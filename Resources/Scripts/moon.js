@@ -39,7 +39,7 @@ function sendMoonRequest(){
 
         let location = 'Philadelphia';
         const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/
-        ${location}/${selectedYear}-${month}-${selectedDay}?key=${APIKEY}&include=obs`;
+        ${location}/${selectedYear}-${month}-${selectedDay}?key=${APIKEY}&include=obs&elements=moonphase`;
 
         fetch(url, {
             method: 'GET',
@@ -47,12 +47,10 @@ function sendMoonRequest(){
         })
         .then(response => response.json())
         .then(json => {
-            
-            console.log(json);
-            /* console.log(json[0].Phase);
-            let date = new Date(parseInt(json[0].TargetDate));
-            console.log("Target Date: " + date);
-            displayMoonInfo(json[0].Phase); */
+            let phaseNum = json.days[0].moonphase;
+            console.log(phaseNum);
+            let phase = moonPhaseFromFloat(phaseNum);
+            displayMoonInfo(phase);
         }) 
     }
 }
@@ -79,4 +77,31 @@ function displayMoonInfo(phase){
     }
 
     moonImage.src = phasesURI + phase + '.png';
+}
+
+function moonPhaseFromFloat(phaseNum){
+
+    let phase;
+
+    if(phaseNum <= 0.02)
+        phase = 'New Moon';    
+    else if(phaseNum <= 0.23)
+        phase = 'Waxing Crescent';
+    else if(phaseNum <= 0.27)
+        phase = 'First Quarter';
+    else if(phaseNum <= 0.48)
+        phase = 'Waxing Gibbous';
+    else if(phaseNum <= 0.51)
+        phase = 'Full Moon';
+    else if(phaseNum <= 0.73)
+        phase = 'Waning Gibbous';
+    else if(phaseNum <= 0.77)
+        phase = 'Last Quarter';
+    else if(phaseNum <= 0.98)
+        phase = 'Waning Crescent';
+    else
+        phase = 'New Moon';
+
+    return phase;
+    
 }
