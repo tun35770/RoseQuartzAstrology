@@ -153,15 +153,14 @@ select {
         width: 100%;
         height: auto;
         margin: 0;
-        
     }
 
     #birthdate-header {
-        font-size: 3em;
+        font-size: 2em;
     }
 
     .birthdate-select, button {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
     #secondary-horoscope {
