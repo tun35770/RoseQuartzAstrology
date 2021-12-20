@@ -33,18 +33,17 @@ let signText, compatText, timeText, numberText, colorText, moodText, descText;
 //create selects
 const monthList = document.getElementById("month");
 const dayList = document.getElementById("day");
-const yearList = document.getElementById("year");
 
 
 // ------ PROGRAM ------ \\
 
-initializeDateSelect();
+initializeMonthSelect();
+initializeDaySelect();
 
 button.onclick = sendHoroscopeRequest;
 
 monthList.oninput = monthSelectOnInput;
 dayList.oninput = daySelectOnInput;
-yearList.oninput = yearSelectOnInput;
 
 // ------ FUNCTIONS ------ \\
 

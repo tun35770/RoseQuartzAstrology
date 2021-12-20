@@ -16,7 +16,9 @@ const yearList = document.getElementById("year");
 
 
 // ------ PROGRAM ------ \\
-initializeDateSelect();
+initializeYearSelect()
+initializeMonthSelect();
+initializeDaySelect();
 
 monthList.oninput = monthSelectOnInput;
 dayList.oninput = daySelectOnInput;
@@ -55,12 +57,15 @@ function sendMoonRequest(){
     }
 }
 
+//displays the moon phase in text and image 
 function displayMoonInfo(phase){
     let moonText = document.getElementById("moon-text");
 
     if(moonText == null){
         moonText = document.createElement("h2");
         moonText.id = "moon-text";
+        moonText.style.fontSize = '3em';
+        moonText.style.margin = '0 auto';
         moonTextContainer.appendChild(moonText);
     }
 
@@ -79,6 +84,7 @@ function displayMoonInfo(phase){
     moonImage.src = phasesURI + phase + '.png';
 }
 
+//returns the moon phase based on a float between 0 and 1
 function moonPhaseFromFloat(phaseNum){
 
     let phase;

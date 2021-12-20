@@ -7,11 +7,11 @@ var months = ["January", "February", "March", "April", "May", "June", "July"
                     , "August", "September", "October", "November", "December"];
 
 const days = new Array(31);
-const years = new Array(100);
+const years = new Array(120);
 
 var selectedMonth, selectedDay, selectedYear;
 
-var isLeapYear = false;
+var isLeapYear = true;
 
 // ------ PROGRAM ------ \\
 initializeHeader();
@@ -73,42 +73,6 @@ function updateTime(){
     time_text.textContent = time;
 }
 
-//adds months, days, and years to respective lists
-function initializeDateSelect(){
-    //initialize days[] with 1-31
-    for(let i = 1; i <= 31; i++){
-        days[i-1] = i;
-    }
-
-    //initialize years[] with 1922-2021
-    for(let i = 0; i < 100; i++){
-        years[i] = 2021 - i;
-    }
-
-    //add months as options to monthList
-    for(let i = 0; i < months.length; i++){
-        let option = document.createElement("option");
-        option.value = months[i];
-        option.text = months[i];
-        monthList.appendChild(option);
-    }
-
-    //add days as options to dayList
-    for(let i = 0; i < days.length; i++){
-        let option = document.createElement("option");
-        option.value = days[i];
-        option.text = days[i];
-        dayList.appendChild(option);
-    }
-
-    //add years as options to yearList
-    for(let i = 0; i < years.length; i++){
-        let option = document.createElement("option");
-        option.value = years[i];
-        option.text = years[i];
-        yearList.appendChild(option);
-    }
-}
 
 function yearSelectOnInput(){
     if((yearList.value % 4 == 0 && yearList.value % 100 != 0) || (yearList.value % 4 == 0 && yearList.value % 400 == 0))
@@ -202,4 +166,44 @@ function monthSelectOnInput(){
 
 function daySelectOnInput(){
     selectedDay = dayList.value;
+}
+
+function initializeYearSelect(){
+    //initialize years[] with 1922-2021
+    for(let i = 0; i < years.length; i++){
+        years[i] = 2041 - i;
+    }
+
+    //add years as options to yearList
+    for(let i = 0; i < years.length; i++){
+        let option = document.createElement("option");
+        option.value = years[i];
+        option.text = years[i];
+        yearList.appendChild(option);
+    }
+}
+
+function initializeMonthSelect(){
+    //add months as options to monthList
+    for(let i = 0; i < months.length; i++){
+        let option = document.createElement("option");
+        option.value = months[i];
+        option.text = months[i];
+        monthList.appendChild(option);
+    }
+}
+
+function initializeDaySelect(){
+    //initialize days[] with 1-31
+    for(let i = 1; i <= days.length; i++){
+        days[i-1] = i;
+    }
+
+    //add days as options to dayList
+    for(let i = 0; i < days.length; i++){
+        let option = document.createElement("option");
+        option.value = days[i];
+        option.text = days[i];
+        dayList.appendChild(option);
+    }
 }

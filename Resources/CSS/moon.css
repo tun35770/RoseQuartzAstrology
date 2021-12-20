@@ -61,10 +61,21 @@
     display: flex;
     justify-content: center;
     position: relative;
-    
-    
     margin: 0 auto;
     z-index: -1;
+}
+
+#moon-container, .moon-element {
+    margin: auto;
+    text-align: center;
+}
+
+#moon-img-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+   
 }
 
 #title-text {
