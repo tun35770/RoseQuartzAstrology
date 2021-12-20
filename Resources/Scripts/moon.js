@@ -1,5 +1,7 @@
 
 // ------ VARIABLES ------ \\
+const APIKEY = 'BMJ8966C5QC88NMYNYRLDN6BD';
+
 const phasesURI = './Resources/MoonPhases/';
 
 const button = document.getElementById("date-button");
@@ -22,18 +24,8 @@ yearList.oninput = yearSelectOnInput;
 
 button.onclick = sendMoonRequest;
 
-
-// ------ FUNCTIONS ------ \\
-function getUnixTime(month, day, year){
-    let date = Date.UTC(year, month, day);    //milliseconds since 1/1/1970
-    let d = new Date(date);
-    console.log(date);
-    console.log(d);
-    return date;
-}
-
 function sendMoonRequest(){
-    let unix_time;
+    //let unix_time;
 
     if(selectedMonth == null || selectedYear == null || selectedDay == null){
         console.error("Invalid date");
@@ -41,20 +33,26 @@ function sendMoonRequest(){
     }
 
     else{
+        
         let monthIndex = months.indexOf(selectedMonth);
-        unix_time = getUnixTime(monthIndex, selectedDay, selectedYear);
+        let month = monthIndex+1;
 
-        const url = `https://api.farmsense.net/v1/moonphases/?d=${unix_time}`;
+        let location = 'Philadelphia';
+        const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/
+        ${location}/${selectedYear}-${month}-${selectedDay}?key=${APIKEY}&include=obs`;
 
         fetch(url, {
-            method: 'POST'
+            method: 'GET',
+            
         })
         .then(response => response.json())
         .then(json => {
-            console.log(json[0].Phase);
+            
+            console.log(json);
+            /* console.log(json[0].Phase);
             let date = new Date(parseInt(json[0].TargetDate));
             console.log("Target Date: " + date);
-            displayMoonInfo(json[0].Phase);
+            displayMoonInfo(json[0].Phase); */
         }) 
     }
 }
