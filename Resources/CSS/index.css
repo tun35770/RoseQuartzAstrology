@@ -42,6 +42,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-between;
     background-color: rgb(223, 160, 160);
     font-family: "SpaceAndAstronomy";
@@ -156,7 +157,7 @@ select {
     }
 
     #birthdate-header {
-        font-size: 4em;
+        font-size: 3em;
     }
 
     .birthdate-select, button {
