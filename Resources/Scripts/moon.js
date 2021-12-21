@@ -78,7 +78,6 @@ function displayMoonInfo(phase){
     if(moonImage == null){
         moonImage = document.createElement("img");
         moonImage.id = "moon-image";
-        
         moonContainer.appendChild(moonImage);
     }
 
@@ -94,11 +93,7 @@ function displayMoonInfo(phase){
         moonContainer.appendChild(moonText);
     }
 
-    moonText.textContent = phase;
-
-    
-
-    
+    moonText.textContent = phase;    
 }
 
 //returns the moon phase based on a float between 0 and 1
@@ -106,21 +101,21 @@ function moonPhaseFromFloat(phaseNum){
 
     let phase;
 
-    if(phaseNum <= 0.02)
+    if(phaseNum == 0)
         phase = 'New Moon';    
-    else if(phaseNum <= 0.23)
+    else if(phaseNum < 0.25)
         phase = 'Waxing Crescent';
-    else if(phaseNum <= 0.27)
+    else if(phaseNum == 0.25)
         phase = 'First Quarter';
-    else if(phaseNum <= 0.48)
+    else if(phaseNum < 0.5)
         phase = 'Waxing Gibbous';
-    else if(phaseNum <= 0.51)
+    else if(phaseNum == 0.5)
         phase = 'Full Moon';
-    else if(phaseNum <= 0.73)
+    else if(phaseNum < 0.75)
         phase = 'Waning Gibbous';
-    else if(phaseNum <= 0.77)
+    else if(phaseNum == 0.75)
         phase = 'Last Quarter';
-    else if(phaseNum <= 0.98)
+    else if(phaseNum < 1)
         phase = 'Waning Crescent';
     else
         phase = 'New Moon';
