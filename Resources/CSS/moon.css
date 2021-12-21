@@ -66,6 +66,29 @@
     z-index: -1;
 }
 
+#link {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3em;
+    text-align: center;
+    border: 2px solid rgb(201, 136, 136);
+    color: black;
+}
+
+a:link, a:visited, a:focus {
+    background: rgb(219, 148, 148);
+}
+  
+a:hover {
+    background-color: rgb(223, 160, 160);
+}
+
+#link-container {
+    margin: 1.3em auto;
+    text-align: left;
+}
+
 #moon-container {
     font-family: 'SpaceAndAstronomy';
     display: block;
@@ -132,6 +155,10 @@ select {
 
     .date-select, button {
         font-size: 1em;
+    }
+
+    #header {
+        font-size: 0.8em;
     }
 
 }
