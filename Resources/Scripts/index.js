@@ -36,6 +36,7 @@ const dayList = document.getElementById("day");
 
 
 // ------ PROGRAM ------ \\
+initializeHeader("Moon Phase", "moon.html");
 
 initializeMonthSelect();
 initializeDaySelect();

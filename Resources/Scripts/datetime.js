@@ -14,7 +14,6 @@ var selectedMonth, selectedDay, selectedYear;
 var isLeapYear = true;
 
 // ------ PROGRAM ------ \\
-initializeHeader();
 
 //updates time every second
 setInterval(() => {updateTime();}
@@ -22,7 +21,7 @@ setInterval(() => {updateTime();}
 
 
 // ------ FUNCTIONS ------ \\
-function initializeHeader(){
+function initializeHeader(linkText, linkPath){
     let today = new Date();
 
     let date = months[today.getMonth()] + ' ' + today.getDate() + ', ' + today.getFullYear();
@@ -34,13 +33,26 @@ function initializeHeader(){
     date_text.style.color = "whitesmoke";
     header.appendChild(date_text);
 
+    //link to other page
+    let link = document.createElement("a");
+    link.href = linkPath;
+    link.textContent = linkText;
+    header.appendChild(link);
+
     //create time text element
+    let time_section = document.createElement("section");
+    time_section.id="time-section";
+    time_section.style.minWidth = "20%";
+    time_section.style.display = "flex";
+    time_section.style.justifyContent = "right";
+    header.appendChild(time_section);
+
     let time_text = document.createElement("p");
     time_text.id = "time_text";
     time_text.className = "header-text";
     time_text.style.margin = "0";
     time_text.style.color = "whitesmoke";
-    header.appendChild(time_text);
+    time_section.appendChild(time_text);
 
     //sets initial time
     updateTime();

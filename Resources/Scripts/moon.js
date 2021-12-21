@@ -16,6 +16,8 @@ const yearList = document.getElementById("year");
 
 
 // ------ PROGRAM ------ \\
+initializeHeader("Horoscope", "index.html");
+
 initializeYearSelect()
 initializeMonthSelect();
 initializeDaySelect();
