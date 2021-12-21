@@ -6,8 +6,10 @@ const phasesURI = './Resources/MoonPhases/';
 
 const button = document.getElementById("date-button");
 
-let moonImgContainer = document.getElementById("moon-img-container");
-let moonTextContainer = document.getElementById("moon-text-container");
+let moonContainer = document.getElementById("moon-container");
+let moonImg;
+let moonText;
+let moonHead;
 
 //create selects
 const monthList = document.getElementById("month");
@@ -61,29 +63,43 @@ function sendMoonRequest(){
 
 //displays the moon phase in text and image 
 function displayMoonInfo(phase){
-    let moonText = document.getElementById("moon-text");
 
-    if(moonText == null){
-        moonText = document.createElement("h2");
-        moonText.id = "moon-text";
-        moonText.style.fontSize = '2em';
-        moonText.style.margin = '0 auto';
-        moonTextContainer.appendChild(moonText);
+    //add heading
+    moonHead = document.getElementById("moon-head");
+    if(moonHead == null){
+        moonHead = document.createElement("h2");
+        moonHead.id = "moon-head";
+        moonContainer.appendChild(moonHead);
     }
+    moonHead.textContent = `${selectedMonth} ${selectedDay}, ${selectedYear}`;
 
-    moonText.textContent = phase;
-
+    //add image
     let moonImage = document.getElementById("moon-image");
-
     if(moonImage == null){
         moonImage = document.createElement("img");
         moonImage.id = "moon-image";
         moonImage.style.width = "30%";
         moonImage.style.height = "auto";
-        moonImgContainer.appendChild(moonImage);
+        moonContainer.appendChild(moonImage);
     }
 
     moonImage.src = phasesURI + phase + '.png';
+
+    //add phase text
+    let moonText = document.getElementById("moon-text");
+    if(moonText == null){
+        moonText = document.createElement("h2");
+        moonText.id = "moon-text";
+        moonText.style.fontSize = '2em';
+        moonText.style.margin = '0 auto';
+        moonContainer.appendChild(moonText);
+    }
+
+    moonText.textContent = phase;
+
+    
+
+    
 }
 
 //returns the moon phase based on a float between 0 and 1

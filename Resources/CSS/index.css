@@ -77,11 +77,11 @@
 }
 
 a:link, a:visited, a:focus {
-    background: rgb(219, 148, 148);
+    background: rgb(223, 160, 160);
 }
   
 a:hover {
-    background-color: rgb(223, 160, 160);
+    background-color: rgb(223, 172, 172);
 }
 
 #link-container {
@@ -93,6 +93,7 @@ a:hover {
     color: whitesmoke;
     font-size: 6em;
     text-align: center;
+    margin-top: 0;
     margin-bottom: 0;
 }
 
