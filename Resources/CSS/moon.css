@@ -106,12 +106,13 @@ a:hover {
     padding: 0.5em 0;
 }
 
-#moon-img {
+#moon-image {
     display: flex;
     justify-content: center;
     position: relative;
     margin: 0 auto;
-   
+    width: 50%;
+    height: auto;
 }
 
 #moon-text {
@@ -176,6 +177,10 @@ select {
 
     #header {
         font-size: 0.8em;
+    }
+
+    #moon-image {
+        width: 75%;
     }
 
 }

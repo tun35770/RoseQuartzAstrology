@@ -78,8 +78,7 @@ function displayMoonInfo(phase){
     if(moonImage == null){
         moonImage = document.createElement("img");
         moonImage.id = "moon-image";
-        moonImage.style.width = "30%";
-        moonImage.style.height = "auto";
+        
         moonContainer.appendChild(moonImage);
     }
 
