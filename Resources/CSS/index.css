@@ -76,6 +76,14 @@
     color: black;
 }
 
+#subtext {
+    color: whitesmoke;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 a:link, a:visited, a:focus {
     background: rgb(223, 160, 160);
 }

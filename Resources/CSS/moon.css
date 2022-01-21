@@ -121,6 +121,14 @@ a:hover {
     padding: 0.25em 0.5em;
 }
 
+#subtext {
+    color: whitesmoke;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 #title-text {
     color: whitesmoke;
     font-size: 6em;
